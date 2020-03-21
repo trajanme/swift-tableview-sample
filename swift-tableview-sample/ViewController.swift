@@ -25,7 +25,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    var tables:[String] = ["Augustus", "Tiberius", "Caligula", "Claudius", "Nero"]
+    var tables:[String] = [
+        "Augustus", "Tiberius", "Caligula", "Claudius", "Nero",
+        "Galba", "Otho", "Vitellivs", "Vespasianvs", "Titvs",
+        "Domitianvs", "Nerva", "Traianvs", "Hadrianvs", "Antoninvs",
+        "Marcvs Avrelivs", "Lvcivs Vervs", "Commodvs", "Pertinax", "Didivs Ivlianvs",
+        "Septimvs Severvs", "Caracalla", "Geta"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
+        
     // storyboardからTableViewを紐付ける
     @IBOutlet weak var tableView: UITableView!
     
