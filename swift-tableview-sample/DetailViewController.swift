@@ -10,21 +10,21 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var emperorName: UILabel!
+    @IBOutlet weak var emperorImage: UIImageView!
+    @IBOutlet weak var emperorDescription: UITextView!
+
+    var data: RomanEmperor?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-    
+        if let data = data {
+            emperorName.text = data.japaneseName
+            emperorImage.image = UIImage(named: data.imageFileName)
+            emperorDescription.text = data.description
+        }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }

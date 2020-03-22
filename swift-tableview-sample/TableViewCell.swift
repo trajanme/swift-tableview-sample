@@ -10,15 +10,16 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet private var emperorName: UILabel!
+    @IBOutlet weak var emperorImage: UIImageView!
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        emperorName.text = nil
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureCell(_ data: RomanEmperor) {
+        emperorName!.text = data.japaneseName
+        emperorImage.image = UIImage(named: data.imageFileName)
     }
-
 }
